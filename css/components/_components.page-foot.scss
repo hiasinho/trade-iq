@@ -5,13 +5,26 @@
   background-size: cover;
 
   padding: $spacing-unit--huge $spacing-unit $spacing-unit;
+  font-weight: lighter;
 
   // height: 130px;
   // display: block;
 
 
+  &__copyright,
+  &__nav {
+    text-align: center;
+  }
+
   &__copyright {
-    vertical-align: bottom;
-    font-weight: lighter;
+    @include mq(tablet) {
+      text-align: left;
+    }
+  }
+
+  &__nav {
+    @include mq(tablet) {
+      text-align: right;
+    }
   }
 }

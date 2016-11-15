@@ -1,0 +1,12 @@
+.c-alert {
+  padding: $spacing-unit--small;
+  margin-bottom: $spacing-unit;
+
+  &--success {
+    background-color: lighten($color-green, 20%);
+  }
+
+  &--error {
+    background-color: lighten($color-red, 20%);
+  }
+}

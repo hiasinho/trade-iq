@@ -76,17 +76,17 @@ export default class Index extends React.Component {
                 <p className="u-h4 u-text--center">TradeIQ is a platform that provides you with all the information, tools and expert support that you need to manage your export and import processes more easily.</p>
               </div>
             </div>
-            <div className="o-layout o-layout--center">
+            <div className="o-layout o-layout--center" id="join">
               <div className="o-layout__item u-text--center">
                 <h2>Join Us now – It‘s FREE</h2>
               </div>
               <div className="o-layout__item u-6-tablet u-5-desktop">
-                <a onClick={this.handleShowForm.bind(this, 'export')} className="c-btn c-btn--block c-btn--large c-btn--secondary u-margin-bottom">
+                <a onClick={this.handleShowForm.bind(this, 'partners')} className="c-btn c-btn--block c-btn--large c-btn--secondary u-margin-bottom">
                   I am an<br/>Exporter or Importer
                 </a>
               </div>
               <div className="o-layout__item u-6-tablet u-5-desktop">
-                <a onClick={this.handleShowForm.bind(this, 'provider')} className="c-btn c-btn--block c-btn--large c-btn--secondary u-margin-bottom">
+                <a onClick={this.handleShowForm.bind(this, 'sme')} className="c-btn c-btn--block c-btn--large c-btn--secondary u-margin-bottom">
                   I am a<br/>Logistics Provider or Customs Agent
                 </a>
               </div>
@@ -96,7 +96,7 @@ export default class Index extends React.Component {
           </div>
         </section>
 
-        <section className="c-area u-theme--tint">
+        <section className="c-area u-theme--tint" id="services">
           <div className="o-wrapper">
             <div className="o-layout o-layout--center">
               <div className="o-layout__item u-text--center">

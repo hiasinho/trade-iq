@@ -26,13 +26,13 @@ module.exports = React.createClass({
                 <li className="site-nav__item  site-nav__item--close">
                   <a href="#0" className="site-nav__link site-nav__close">Close</a>
                 </li>
-                <li className="c-site-nav__item"><Link to={prefixLink('/html/')}>Services</Link></li>
-                <li className="c-site-nav__item"><Link to={prefixLink('/html/')}>About</Link></li>
-                <li className="c-site-nav__item"><Link to={prefixLink('/html/')}>Join</Link></li>
+                <li className="c-site-nav__item"><a href="#services">Services</a></li>
+                <li className="c-site-nav__item"><a href="#join">Join</a></li>
+                <li className="c-site-nav__item"></li>
               </ul>
             </nav>
 
-            <div className="c-page-head__brand u-margin-top-huge">
+            <div className="c-page-head__brand u-padding-top-huge">
               <div className="c-logo c-logo--light">
                 <div className="c-logo__image"></div>
                 <div className="c-logo__text">
@@ -47,9 +47,22 @@ module.exports = React.createClass({
         </header>
         {this.props.children}
         <footer className="c-page-foot u-theme-color--water">
-          <div className="c-page-foot__copyright">
-            &copy; 2016 TradeIQ. All rights reserved.
+          <div className="o-layout">
+            <div className="o-layout__item u-6-tablet">
+              <div className="c-page-foot__copyright">
+                &copy; 2016 TradeIQ. All rights reserved.
+              </div>
+            </div>
+
+            <div className="o-layout__item u-6-tablet">
+              <div className="c-page-foot__nav">
+                <Link to={prefixLink('/impressum/')}>Terms</Link>.
+                <Link to={prefixLink('/impressum/')}>Privacy</Link>.
+              </div>
+            </div>
           </div>
+
+
         </footer>
       </div>
     )
