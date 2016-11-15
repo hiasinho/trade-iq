@@ -1,0 +1,109 @@
+// Grid & Screen Sizes
+$lg-container: 960px;
+
+$xs-screen: 0;
+$sm-screen: 576px;
+$md-screen: 768px;
+$lg-screen: 992px;
+$xl-screen: 1200px;
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  gutter-override: $unit,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: $lg-container,
+  global-box-sizing: border-box,
+  // debug: (
+  //   image: show,
+  //   color: rgba(#66f, .25),
+  //   output: overlay,
+  //   toggle: bottom right,
+  // ),
+);
+
+$hiasinho-fractions: 12;
+$hiasinho-offsets: false !default;
+$hiasinho-widths-delimiter: of !default;
+$hiasinho-widths-breakpoint-separator: \- !default;
+
+.o-container {
+  color: red;
+  @include container;
+}
+
+.o-col-6 {
+  @include span(6);
+}
+
+@for $numerator from 1 through 12 {
+  .o-span-#{$numerator} {
+    // width: span($numerator);
+    @include span($numerator);
+  }
+}
+
+@mixin hiasinho-widths($columns, $breakpoint: null) {
+
+  // Loop through the number of columns for each denominator of our fractions.
+  @each $denominator in $columns {
+
+    // Begin creating a numerator for our fraction up until we hit the
+    // denominator.
+    @for $numerator from 1 through $denominator {
+
+      // Build a class in the format `.u-3/4[@<breakpoint>]`.
+      .o-span-#{$numerator}#{$hiasinho-widths-delimiter}#{$denominator}#{$breakpoint} {
+        // width: ($numerator / $denominator) * 100% !important;
+        width: span($numerator)  !important;
+      }
+
+      // Build a class in the format `.u-3/4[@<breakpoint>]`.
+      .o#{$breakpoint}-#{$numerator} {
+        // width: ($numerator / $denominator) * 100% !important;
+        width: span($numerator)  !important;
+      }
+
+      @if ($hiasinho-offsets == true) {
+
+        /**
+        * 1. Reset any leftover or conflicting `left`/`right` values.
+        */
+
+        // Build a class in the format `.u-push-1/2[@<breakpoint>]`.
+        .u-push-#{$numerator}#{$hiasinho-widths-delimiter}#{$denominator}#{$breakpoint} {
+          position: relative !important;
+          right: auto !important; /* [1] */
+          left: ($numerator / $denominator) * 100% !important;
+        }
+
+        // Build a class in the format `.u-pull-5/6[@<breakpoint>]`.
+        .u-pull-#{$numerator}#{$hiasinho-widths-delimiter}#{$denominator}#{$breakpoint} {
+          position: relative !important;
+          right: ($numerator / $denominator) * 100% !important;
+          left: auto !important; /* [1] */
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@include hiasinho-widths($hiasinho-fractions);
+
+@if (variable-exists(mq-breakpoints)) {
+
+  @each $inuit-bp-name, $inuit-bp-value in $mq-breakpoints {
+
+    @include mq($from: $inuit-bp-name) {
+      @include hiasinho-widths($hiasinho-fractions, #{$hiasinho-widths-breakpoint-separator}#{$inuit-bp-name});
+    }
+
+  }
+
+}

@@ -1,0 +1,17 @@
+.c-page-foot {
+  background: url('../images/wave.svg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: $spacing-unit--huge $spacing-unit $spacing-unit;
+
+  // height: 130px;
+  // display: block;
+
+
+  &__copyright {
+    vertical-align: bottom;
+    font-weight: lighter;
+  }
+}

@@ -1,0 +1,97 @@
+.c-page-head {
+  position: relative;
+  color: white;
+  padding-bottom: $spacing-unit;
+
+
+  &--masthead {
+    border-top-width: 0;
+    background-color: $color-blue;
+    // background: url('../images/map_light.svg'), radial-gradient(1000px at 50% 80%, $color-blue, darken($color-blue, 20%));
+    background: url('../images/map_light2-min.png'), radial-gradient(circle, rgba(white, 0) 40%, rgba(black, 0.2) 100%), linear-gradient(135deg, $color-blue 40%, darken($color-green, 0%));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .o-wrapper {
+      @include mq($from: desktop) {
+        // height: 600px;
+      }
+    }
+  }
+
+  &__brand, &__title, &__subtitle {
+    position: relative;
+    font-weight: normal;
+    text-align: right;
+    z-index: 1;
+
+    .c-page-head--masthead & {
+      text-align: center;
+    }
+  }
+
+  &__brand {
+    margin-bottom: $spacing-unit;
+  }
+
+  &__title {
+    // margin-top: $spacing-unit--large;
+    margin-bottom: $spacing-unit--small;
+
+    @include mq(tablet) {
+      @include font-size($spacing-unit--large);
+    }
+
+    .c-page-head--masthead & {
+      @include mq(tablet) {
+        @include font-size($spacing-unit--large);
+      }
+
+      @include mq(desktop) {
+        // margin-top: $spacing-unit--huge;
+        @include font-size($spacing-unit--large);
+      }
+    }
+  }
+
+  &__subtitle {
+    font-weight: lighter;
+  }
+
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 0;
+
+    &-img {
+      background-color: rgba($dark-gray, 0.5);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: -1;
+
+      transition-property: transform, opacity;
+      transition-duration: 10s, 3s;
+      transition-timing-function: linear;
+      transform-origin: center;
+
+      &:first-child {
+        opacity: 1;
+      }
+    }
+  }
+
+}

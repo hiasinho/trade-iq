@@ -1,0 +1,42 @@
+body.modal__open {
+  overflow: hidden;
+}
+
+.c-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: rgba(black, 0.85);
+  z-index: 9998;
+
+  color: white;
+
+  &__content {
+    padding: $spacing-unit;
+  }
+
+  &__close {
+    // font-family: $helvetica;
+    position: absolute;
+    top: 0;
+    right: 0;
+    // background-color: red;
+    width: 4rem;
+    height: 4rem;
+    font-size: 4rem;
+    cursor: pointer;
+    z-index: 900;
+    line-height: 1;
+
+    @include mq(desktop) {
+      background-color: initial;
+    }
+  }
+
+  #{$all-text-inputs}, input:not([type=submit]) {
+    color: $color-gray--dark;
+  }
+}

@@ -1,0 +1,76 @@
+.c-logo {
+  $logo-width: 398px;
+  $logo-height: 415px;
+  $logo-ratio: 398px / 415px;
+
+  $logo-to-text-ratio: 2.0833333333333335;
+
+  $logo-font-size: $spacing-unit--large;
+  $logo-font-size--small: $spacing-unit + $spacing-unit--small;
+
+  $logo-size: $logo-font-size * $logo-to-text-ratio;
+  $logo-size--small: $logo-font-size--small * $logo-to-text-ratio;
+
+  display: block;
+
+  &__image,
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__image {
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    width: $logo-size--small * $logo-ratio;
+    height: $logo-size--small;
+    position: relative;
+    margin-right: $spacing-unit--small;
+    transition: height .3s linear;
+    z-index: 800;
+
+    @include mq($from: tablet) {
+      width: $logo-size * $logo-ratio;
+      height: $logo-size;
+    }
+  }
+
+  &__text {
+    @include font-size($logo-font-size--small);
+    color: $primary-color;
+    font-weight: lighter;
+
+    span {
+      font-weight: bold;
+      color: $secondary-color;
+    }
+
+    @include mq($from: tablet) {
+      @include font-size($logo-font-size);
+    }
+  }
+
+  &--light {
+    .c-logo__image {
+      background-image: url('../images/logo_white.svg');
+    }
+
+    .c-logo__text {
+      color: white;
+
+      span {
+        color: white;
+      }
+    }
+  }
+
+
+
+  &--small {
+    width: $logo-width * $inuit-global-spacing-unit-factor-small;
+    height: $logo-height * $inuit-global-spacing-unit-factor-small;
+  }
+}

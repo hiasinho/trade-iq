@@ -1,0 +1,25 @@
+//  Inspired by http://csswizardry.com/2011/10/the-island-object/
+.o-island {
+  padding: $inuit-global-spacing-unit;
+}
+
+.o-bluff {
+  padding: $inuit-global-spacing-unit-tiny;
+}
+
+.o-islet {
+  padding: $inuit-global-spacing-unit-small;
+}
+
+.o-island-2x {
+  padding: $inuit-global-spacing-unit-large;
+}
+
+.o-island,
+.o-bluff,
+.o-islet {
+  &--peninsula {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,70 @@
+/* ==========================================================================
+   #GRIDS
+   ========================================================================== */
+
+/**
+ * The grid object simply causes any number of elements line up horizontally to
+ * automatically fill an equal, fluid width of their parent.
+ *
+ * 1. Fill all available space.
+ * 2. Remove any leftover styling from lists.
+ * 3. Cause children to be automatically equally sized.
+ */
+
+@mixin grid-size($border-size) {
+  border: $border-size solid transparent;
+  border-top-width: 0;
+  margin-left: -($border-size);
+
+  // &:not(:last-child) {
+  //   border: $border-size solid transparent;
+  //   border-top-width: 0;
+  // }
+  //
+  // &:nth-child(2n) {
+  //   border: $border-size solid transparent;
+  //   border-top-width: 0;
+  // }
+
+  &:first-child {
+    // border-left-width: 0;
+    // margin-left: -($border-size);
+  }
+}
+
+.o-grid {
+  $grid-border-size: 0;
+  @include clearfix;
+  width: 100%; /* [1] */
+  margin-left: 0; /* [2] */
+
+  &__item {
+    width: 100%;
+    // max-width: 90px;
+    float: left;
+    // @include grid-size(2px);
+  }
+
+  /* Size variants.
+     ========================================================================== */
+
+  &--tiny &__item {
+    @include grid-size($inuit-global-spacing-unit-tiny);
+  }
+
+  &--small &__item {
+    @include grid-size($inuit-global-spacing-unit-small);
+  }
+
+  &--large &__item {
+    @include grid-size($inuit-global-spacing-unit-large);
+  }
+
+  &--huge &__item {
+    @include grid-size($inuit-global-spacing-unit-huge);
+  }
+
+  &--flush &__item {
+    @include grid-size(0);
+  }
+}

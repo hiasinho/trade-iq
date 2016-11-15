@@ -1,0 +1,47 @@
+/*------------------------------------*\
+    #AREAS
+\*------------------------------------*/
+
+$color-area-highlight-background: white;
+$color-area-tint-background: #f2f2f2;
+$color-area-dark-background: $color-gray;
+$color-area-dark: white;
+$color-area-attention-background: $color-red;
+$color-area-attention: white;
+
+@mixin area-spacing($spacing) {
+  padding-top:    $spacing;
+  padding-bottom: $spacing;
+}
+
+.c-area {
+  @include area-spacing($spacing-unit);
+
+  @include mq(desktop) {
+    @include area-spacing($spacing-unit--large);
+  }
+}
+
+.c-area--tiny {
+  @include area-spacing($spacing-unit--tiny);
+
+  @include mq(desktop) {
+    @include area-spacing($spacing-unit--small);
+  }
+}
+
+.c-area--small {
+  @include area-spacing($spacing-unit--small);
+
+  @include mq(desktop) {
+    @include area-spacing($spacing-unit);
+  }
+}
+
+.c-area--large {
+  @include area-spacing($spacing-unit--large);
+
+  @include mq(desktop) {
+    @include area-spacing($spacing-unit--huge);
+  }
+}
