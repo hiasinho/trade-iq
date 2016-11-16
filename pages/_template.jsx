@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'react-responsive-grid'
 import { Link } from 'react-router'
 import { prefixLink } from 'gatsby-helpers'
 import Headroom from 'react-headroom'
@@ -26,10 +25,10 @@ module.exports = React.createClass({
                 <li className="site-nav__item  site-nav__item--close">
                   <a href="#0" className="site-nav__link site-nav__close"></a>
                 </li>
-                <li className="c-site-nav__item"><a href="#why">Why TradeIQ?</a></li>
-                <li className="c-site-nav__item"><a href="#join">Join</a></li>
-                <li className="c-site-nav__item"><a href="#services">Services</a></li>
-                <li className="c-site-nav__item"><a href="#about">About Us</a></li>
+                <li className="c-site-nav__item"><a href="/#why">Why TradeIQ?</a></li>
+                <li className="c-site-nav__item"><a href="/#join">Join</a></li>
+                <li className="c-site-nav__item"><a href="/#services">Services</a></li>
+                <li className="c-site-nav__item"><a href="/#about">About Us</a></li>
                 <li className="c-site-nav__item"></li>
               </ul>
             </nav>

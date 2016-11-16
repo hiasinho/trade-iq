@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import axios from 'axios'
 import { ajax } from 'jquery'
 import serialize from 'form-serialize'
 import classNames from 'classnames'
