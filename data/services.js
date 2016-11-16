@@ -17,15 +17,20 @@ const services = [
     body: `Filling the required  trade documents`,
   },
   {
+    icon: icons.delivery,
+    title: `Logistic Partners`,
+    body: `Connections to logistics and  freight companies`,
+  },
+  {
+    icon: icons.dollar,
+    title: `International Payments`,
+    body: `Ensure international payments, reduce time-to-cash and minimize currency exchange risk`,
+  },
+  {
     icon: icons.planetEarth,
     title: `Expert Assistance`,
     body: `Need help filing your trade documents?  Get expert assistance`,
   },
-  {
-    icon: icons.delivery,
-    title: `Logistic Partners`,
-    body: `Connections to logistics and  freight companies`,
-  }
 ]
 
 export default services

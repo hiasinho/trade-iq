@@ -7,9 +7,11 @@
 
   $logo-font-size: $spacing-unit--large;
   $logo-font-size--small: $spacing-unit + $spacing-unit--small;
+  $logo-font-size--large: $spacing-unit + $spacing-unit--large;
 
   $logo-size: $logo-font-size * $logo-to-text-ratio;
   $logo-size--small: $logo-font-size--small * $logo-to-text-ratio;
+  $logo-size--large: $logo-font-size--large * $logo-to-text-ratio;
 
   display: block;
 
@@ -72,5 +74,18 @@
   &--small {
     width: $logo-width * $inuit-global-spacing-unit-factor-small;
     height: $logo-height * $inuit-global-spacing-unit-factor-small;
+  }
+
+  &--large {
+    .c-logo__image {
+      width: $logo-size * $logo-ratio;
+      height: $logo-size;
+
+      @include mq($from: tablet) {
+
+        width: $logo-size--large * $logo-ratio;
+        height: $logo-size--large;
+      }
+    }
   }
 }

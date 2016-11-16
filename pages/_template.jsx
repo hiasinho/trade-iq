@@ -24,10 +24,12 @@ module.exports = React.createClass({
 
               <ul className="c-site-nav__list">
                 <li className="site-nav__item  site-nav__item--close">
-                  <a href="#0" className="site-nav__link site-nav__close">Close</a>
+                  <a href="#0" className="site-nav__link site-nav__close"></a>
                 </li>
-                <li className="c-site-nav__item"><a href="#services">Services</a></li>
+                <li className="c-site-nav__item"><a href="#why">Why TradeIQ?</a></li>
                 <li className="c-site-nav__item"><a href="#join">Join</a></li>
+                <li className="c-site-nav__item"><a href="#services">Services</a></li>
+                <li className="c-site-nav__item"><a href="#about">About Us</a></li>
                 <li className="c-site-nav__item"></li>
               </ul>
             </nav>
@@ -42,7 +44,9 @@ module.exports = React.createClass({
             </div>
 
             <h1 className="c-page-head__title">Simplifying Global Trade for SMEs</h1>
-            <h3 className="c-page-head__subtitle u-margin-bottom-huge">Some super cool slogan to rule the trading world, bro</h3>
+            <h3 className="c-page-head__subtitle u-h5 u-margin-bottom-huge">
+              Global trade compliance and management platform providing information, tools and expert assistance to manage export and import processes more easily and efficiently.
+            </h3>
           </div>
         </header>
         {this.props.children}
