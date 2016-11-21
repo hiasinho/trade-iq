@@ -6,7 +6,7 @@ import ReactGA from 'react-ga'
 import classNames from 'classnames'
 import { config } from 'config'
 
-import { map } from 'lodash'
+import { map, bind } from 'lodash'
 
 import services from '../data/services'
 import benefits from '../data/benefits'
@@ -23,15 +23,27 @@ export default class Index extends React.Component {
     }
   }
 
-  handleShowForm(name) {
+  handleShowPartnerForm = () => {
+    this.setState({
+      showForm: 'partners'
+    })
+    
     ReactGA.event({
       category: 'Join Form',
-      action: `Show ${name}`,
-      label: name
+      action: `Show Partners`,
+      label: 'partners'
+    })
+  }
+
+  handleShowSMEForm = () => {
+    this.setState({
+      showForm: 'sme'
     })
 
-    this.setState({
-      showForm: name
+    ReactGA.event({
+      category: 'Join Form',
+      action: `Show Partners`,
+      label: 'sme'
     })
   }
 
@@ -97,12 +109,12 @@ export default class Index extends React.Component {
           <h1>Join Us – It‘s FREE</h1>
         </div>
         <div className="o-layout__item u-6-tablet u-6-desktop">
-          <a onClick={this.handleShowForm.bind(this, 'partners')} className={classPartners}>
+          <a onClick={this.handleShowPartnerForm} className={classPartners}>
             I am an<br/>Exporter or Importer
           </a>
         </div>
         <div className="o-layout__item u-6-tablet u-6-desktop">
-          <a onClick={this.handleShowForm.bind(this, 'sme')} className={classSME}>
+          <a onClick={this.handleShowSMEForm} className={classSME}>
             I am a<br/>Logistics Provider or Customs Agent
           </a>
         </div>
@@ -195,15 +207,3 @@ export default class Index extends React.Component {
     )
   }
 }
-
-// <noscript>
-//   <iframe
-//     src="https://www.googletagmanager.com/ns.html?id=GTM-TZTBZ5F"
-//     height="0" width="0"
-//     style={{
-//       display: 'none',
-//       visibility: 'hidden'
-//     }}
-//   >
-//   </iframe>
-// </noscript>

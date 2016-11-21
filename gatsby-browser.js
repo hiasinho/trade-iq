@@ -1,5 +1,6 @@
 import ReactGA from 'react-ga';
 import mixpanelParts from './utils/mixpanel'
+import './utils/polyfills'
 
 ReactGA.initialize('UA-40397307-8');
 mixpanelParts.scriptAsEval();
