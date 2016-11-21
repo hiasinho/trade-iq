@@ -9,17 +9,17 @@ const services = [
   {
     icon: icons.calculator,
     title: `Duties`,
-    body: `Calculate, landed cost, duties and other trade barriers`,
+    body: `Calculate landed cost, duties and other trade barriers`,
   },
   {
     icon: icons.diary,
     title: `Forms`,
-    body: `Filling the required  trade documents`,
+    body: `Obtain and fill the required  trade documents`,
   },
   {
     icon: icons.delivery,
     title: `Logistic Partners`,
-    body: `Connections to logistics and  freight companies`,
+    body: `Connections to logistics companies and  customs agents`,
   },
   {
     icon: icons.dollar,
@@ -29,7 +29,7 @@ const services = [
   {
     icon: icons.planetEarth,
     title: `Expert Assistance`,
-    body: `Need help filing your trade documents?  Get expert assistance`,
+    body: `Need help with your export and import operations?  Get expert assistance.`,
   },
 ]
 

@@ -3,6 +3,8 @@ import Helmet from "react-helmet"
 
 import { prefixLink } from 'gatsby-helpers'
 
+import mixpanel from './utils/mixpanel'
+
 const BUILD_TIME = new Date().getTime()
 
 module.exports = React.createClass({

@@ -3,7 +3,7 @@ import icons from '../images/icons'
 const benefits = [
   {
     icon: icons.navigate,
-    body: `Navigate through the complexity of international trade rules to comply with regulation`,
+    body: `Comply with regulation by being informed on the latest rates, taxation and customs requirements`,
   },
   {
     icon: icons.save,
@@ -15,11 +15,11 @@ const benefits = [
   },
   {
     icon: icons.growth,
-    body: `Explore growth opportunities in new export markets`,
+    body: `Explore export opportunities in new international markets`,
   },
   {
     icon: icons.sellmore,
-    body: `Sell more by quoting landed costs including tariffs and shipping costs to international buyers`,
+    body: `Sell more by instantly quoting landed costs including tariffs and shipping costs to international buyers`,
   },
   {
     icon: icons.optimise,

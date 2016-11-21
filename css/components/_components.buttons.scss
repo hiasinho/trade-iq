@@ -32,45 +32,41 @@ input[type='submit'],
 }
 
 
-@mixin button-variant($background, $text: #ffffff) {
-  background-color: $background;
+@mixin button-variant($name, $background, $text: #ffffff) {
+  .c-btn--#{$name} {
+    background-color: $background;
 
-  &,
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: none; /* [4] */
-    color: $text;
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none; /* [4] */
+      color: $text;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: darken($background, 10%);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   }
 
-  &:hover,
-  &:focus {
-    background-color: shade($background, 10%);
+  .c-btn--active.c-btn--#{$name} {
+    background-color: darken($background, 10%);
   }
 }
-
 
 /* Style variants
    ========================================================================== */
 
-.c-btn--primary {
-  @include button-variant($primary-color);
-}
-
-.c-btn--secondary {
-  @include button-variant($secondary-color);
-}
-
-.c-btn--success {
-  @include button-variant($color-success);
-}
-
-.c-btn--clean {
-  @include button-variant($color-clean, $primary-color);
-}
-
-
-
+@include button-variant(primary, $primary-color);
+@include button-variant(secondary, $secondary-color);
+@include button-variant(success, $color-success);
+@include button-variant(clean, $color-clean, $primary-color);
 
 /* Size variants
    ========================================================================== */
@@ -81,6 +77,11 @@ input[type='submit'],
 
 .c-btn--large {
   padding: inuit-rem($inuit-global-spacing-unit) inuit-rem($inuit-global-spacing-unit-large);
+  @include font-size(20px);
+
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 .c-btn--block {
